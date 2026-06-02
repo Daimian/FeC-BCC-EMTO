@@ -109,6 +109,7 @@ for i, sws_val in enumerate(sws_range):
         imagz=0.02,
         efgs=0.4,
         nx=31,
+        ncpu=4,
     )
 
     fec.emto.kgrn.write_input_file(folder=folder)

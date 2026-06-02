@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=FeC_EOS
 #SBATCH -N 1
-#SBATCH -n 7
+#SBATCH -n 28
 #SBATCH -c 1
 #SBATCH --mem-per-cpu=3800
 #SBATCH -C avx512
@@ -13,7 +13,7 @@ ml openmpi/4.1.8-6xzv intel-oneapi-compilers/2025.3.1-pbro intel-oneapi-mkl/2025
 for kgrn_in in fec_bcc_1.*.kgrn; do
     base=${kgrn_in%.kgrn}
     (
-        kgrn_cpa < "${base}.kgrn" > "${base}_kgrn.output" 2>&1
+        mpirun -np 4 kgrn_cpa < "${base}.kgrn" > "${base}_kgrn.output" 2>&1
         kfcd_cpa < "${base}.kfcd" > "${base}_kfcd.output" 2>&1
     ) &
 done
