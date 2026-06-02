@@ -48,7 +48,7 @@ conc_Va = 100.0 - conc_C
 atoms = np.array(['Fe',  'Va', 'C',  'Va', 'C',  'Va', 'C'])
 iqs   = np.array([1,      2,    2,    3,    3,    4,    4], dtype='int32')
 its   = np.array([1,      2,    2,    2,    2,    2,    2], dtype='int32')
-itas  = np.array([1,      1,    2,    3,    4,    5,    6], dtype='int32')
+itas  = np.array([1,      1,    2,    1,    2,    1,    2], dtype='int32')
 concs = np.array([100.0,  conc_Va, conc_C, conc_Va, conc_C, conc_Va, conc_C])
 splts = np.array([2.0,    0.0,  0.0,  0.0,  0.0,  0.0,  0.0])
 s_wss    = np.array([s_ws_metal, s_ws_int, s_ws_int, s_ws_int, s_ws_int, s_ws_int, s_ws_int])
@@ -75,11 +75,13 @@ print(f"SWS scan: {sws_range}")
 fec = pyemto.System(folder=folder)
 
 # Set lattice structure (BMDL/KSTR/SHAPE)
+# EXPAN='M' requires two slope matrices: kappaw=[0.0, -20.0]
 fec.lattice.set_values(
     jobname_lat='fec_bcc',
     latpath=latpath,
     lat='bcc',
     basis=basis,
+    kappaw=[0.0, -20.0],
 )
 fec.lattice.write_structure_input_files(folder=folder, jobname_lat='fec_bcc')
 
