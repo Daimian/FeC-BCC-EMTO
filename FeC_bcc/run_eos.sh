@@ -10,6 +10,8 @@
 
 ml openmpi/4.1.8-6xzv intel-oneapi-compilers/2025.3.1-pbro intel-oneapi-mkl/2025.3.1-iqtm
 
+export OMP_NUM_THREADS=4
+
 for kgrn_in in fec_bcc_1.*.kgrn; do
     base=${kgrn_in%.kgrn}
     (

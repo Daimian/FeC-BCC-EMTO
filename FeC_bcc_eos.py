@@ -107,8 +107,8 @@ for i, sws_val in enumerate(sws_range):
         tfermi=500.0,
         depth=1.0,
         imagz=0.02,
-        efgs=0.4,
-        nx=31,
+        efgs=0.2,
+        nx=9,
         ncpu=4,
     )
 
