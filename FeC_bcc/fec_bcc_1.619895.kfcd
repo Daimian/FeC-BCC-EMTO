@@ -1,0 +1,10 @@
+KFCD      MSGL..=  0 CQNA=  N      2.6.2026
+JOBNAM...=fec_bcc_1.619895
+STRNAM...=fec_bcc
+DIR001=/home/dm/workplace/FeC-BCC-EMTO/FeC_bcc/kstr/
+DIR002=kgrn/
+DIR003=/home/dm/workplace/FeC-BCC-EMTO/FeC_bcc/shape/
+DIR004=/home/dm/workplace/FeC-BCC-EMTO/FeC_bcc/bmdl/
+DIR006=kfcd/
+Lmaxs.= 30 NTH..= 41 NFI..= 81 FPOT..= N
+OVCOR.=  Y UBG..=  N NPRN.=  0
