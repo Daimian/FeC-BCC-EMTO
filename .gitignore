@@ -1,0 +1,13 @@
+# EMTO binary output (large)
+*.tfh
+*.mdl
+*.shp
+
+# KGRN/KFCD runtime output
+*/kgrn/
+*/kfcd/
+*/chd/
+*/pot/
+*/fit/
+
+# Keep .prn text logs, input files (.kstr, .bmdl, .shape, .kgrn, .kfcd, .sh)
