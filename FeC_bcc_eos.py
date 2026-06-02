@@ -105,7 +105,7 @@ for i, sws_val in enumerate(sws_range):
         lmaxh=8,
         lmaxt=4,           # spdfg basis for interstitial spheres
         tfermi=500.0,
-        depth=1.0,
+        depth=3.5,
         imagz=0.02,
     )
 
