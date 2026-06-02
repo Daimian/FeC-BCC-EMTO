@@ -12,7 +12,7 @@ import pyemto
 
 # === Paths ===
 folder = os.path.abspath("./FeC_bcc")
-latpath = folder
+latpath = "."
 
 # === Physical parameters ===
 # alpha-Fe: a = 2.866 Å = 5.416 a.u.
