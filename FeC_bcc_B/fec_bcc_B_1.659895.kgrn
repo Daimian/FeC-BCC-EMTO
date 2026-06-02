@@ -1,37 +1,44 @@
 KGRN                                              2.6.2026
-JOBNAM=fec_bcc_1.679895
+JOBNAM=fec_bcc_B_1.659895
 STRT..=  A MSGL.=  1 EXPAN.= S FCD..=  Y FUNC..= SCA CQNA=N
-FOR001=./kstr/fec_bcc.tfh
-FOR001=./kstr/fec_bccM.tfh
+FOR001=./kstr/fec_bcc_B.tfh
+FOR001=./kstr/fec_bcc_BM.tfh
 DIR002=kgrn/
 DIR003=kgrn/
-FOR004=./bmdl/fec_bcc.mdl
+FOR004=./bmdl/fec_bcc_B.mdl
 DIR006=kgrn/
 DIR009=kgrn/
 DIR010=kgrn/
 DIR011=kgrn/tmp/
-Self-consistent KKR Calc for fec_bcc_1.679895.
+Self-consistent KKR Calc for fec_bcc_B_1.659895.
 Band: 10 lines
 NITER.=100 NLIN.= 31 NPRN.=  0 NCPA.= 30 NT...=  2 MNTA.=  2
 MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  F CRT..=  M
 Lmaxh.=  8 Lmaxt=  4 NFI..= 31 FIXG.=  2 SHF..=  0 SOFC.=  Y
-KMSH...= G IBZ..=  3 NKX..= 21 NKY..= 21 NKZ..= 21 FBZ..=  N
+KMSH...= G IBZ..=  1 NKX..= 21 NKY..= 21 NKZ..= 21 FBZ..=  N
 KMSH2..= G IBZ2.=  1 NKX2.=  4 NKY2.=  0 NKZ2.= 51 NCPU.=004
 ZMSH...= C NZ1..= 16 NZ2..=  8 NZ3..=  8 NRES.=  4 NZD.=1500
 DEPTH..=  1.000 IMAGZ.=  0.020 EPS...=  0.200 ELIM..= -1.000
 AMIX...=  0.050 EFMIX.=  1.000 VMTZ..=  0.000 MMOM..=  2.200
 TOLE...=1.0e-07 TOLEF.=1.0e-07 TOLCPA=1.0e-06 TFERMI=  500.0
-SWS......= 1.6798951 NSWS.=  1 DSWS..=   0.05 ALPCPA= 0.6020
+SWS......= 1.6598951 NSWS.=  1 DSWS..=   0.05 ALPCPA= 0.6020
 Setup: 2 + NQ*NS lines
 EFGS...=  0.200 HX....=  0.100 NX...=  9 NZ0..=  6 STMP..= N
 Symb   IQ IT ITA NZ  CONC   Sm(s)  S(ws) WS(wst) QTR SPLT Fix
 Fe      1  1  1  26  100.00  1.000  1.000  1.000  0.0 2.00  N
-Va      2  2  1   0  98.00  1.000  0.770  0.770  0.0 0.00  N
-C       2  2  2   6  2.000  1.000  0.770  0.770  0.0 0.00  N
+Fe      2  1  1  26  100.00  1.000  1.000  1.000  0.0 2.00  N
 Va      3  2  1   0  98.00  1.000  0.770  0.770  0.0 0.00  N
 C       3  2  2   6  2.000  1.000  0.770  0.770  0.0 0.00  N
 Va      4  2  1   0  98.00  1.000  0.770  0.770  0.0 0.00  N
 C       4  2  2   6  2.000  1.000  0.770  0.770  0.0 0.00  N
+Va      5  2  1   0  98.00  1.000  0.770  0.770  0.0 0.00  N
+C       5  2  2   6  2.000  1.000  0.770  0.770  0.0 0.00  N
+Va      6  2  1   0  98.00  1.000  0.770  0.770  0.0 0.00  N
+C       6  2  2   6  2.000  1.000  0.770  0.770  0.0 0.00  N
+Va      7  2  1   0  98.00  1.000  0.770  0.770  0.0 0.00  N
+C       7  2  2   6  2.000  1.000  0.770  0.770  0.0 0.00  N
+Va      8  2  1   0  98.00  1.000  0.770  0.770  0.0 0.00  N
+C       8  2  2   6  2.000  1.000  0.770  0.770  0.0 0.00  N
 Atom:  4 lines + NT*6 lines
 IEX...=  4 NP..= 251 NES..= 15 NITER=100 IWAT.=  0 NPRNA=  0
 VMIX.....=  0.300000 RWAT....=  3.500000 RMAX....= 20.000000

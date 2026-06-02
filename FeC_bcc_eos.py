@@ -22,8 +22,12 @@ a_bohr = 2.866 * 1.8897259886  # 5.416 a.u.
 sws_center = (3.0 * a_bohr**3 / 2.0 / (4.0 * np.pi * 4))**(1.0/3.0)
 print(f"Estimated SWS (NQ=4): {sws_center:.4f} a.u.")
 
-# S(ws) and WS(wst) = 1.0 for all sites (EMTO standard).
-# Volume partitioning is handled by SHAPE (Voronoi tessellation).
+# === Wigner-Seitz sphere radii ===
+# Literature: C interstitial w⁰_C = 0.77 * SWS (23% smaller)
+# Metal atoms use default S(ws)=1.0; only interstitial spheres are shrunk.
+s_ws_C  = 0.77
+s_ws_Fe = 1.0
+print(f"S(ws): Fe = {s_ws_Fe:.4f}, C/Va = {s_ws_C:.4f}")
 
 # === Carbon concentration ===
 # 2 at% C on each octahedral sublattice
@@ -41,6 +45,8 @@ its   = np.array([1,      2,    2,    2,    2,    2,    2], dtype='int32')
 itas  = np.array([1,      1,    2,    1,    2,    1,    2], dtype='int32')
 concs = np.array([100.0,  conc_Va, conc_C, conc_Va, conc_C, conc_Va, conc_C])
 splts = np.array([2.0,    0.0,  0.0,  0.0,  0.0,  0.0,  0.0])
+s_wss    = np.array([s_ws_Fe, s_ws_C, s_ws_C, s_ws_C, s_ws_C, s_ws_C, s_ws_C])
+ws_wsts  = np.array([s_ws_Fe, s_ws_C, s_ws_C, s_ws_C, s_ws_C, s_ws_C, s_ws_C])
 
 # === BCC primitive cell basis (fractional coordinates) ===
 # Metal:         (0, 0, 0)
@@ -86,6 +92,8 @@ for i, sws_val in enumerate(sws_range):
         concs=concs,
         splts=splts,
         sws=sws_val,
+        s_wss=s_wss,
+        ws_wsts=ws_wsts,
         afm='F',           # Ferromagnetic
         xc='PBE',
         expan='S',         # Single-Taylor expansion
