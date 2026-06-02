@@ -22,18 +22,8 @@ a_bohr = 2.866 * 1.8897259886  # 5.416 a.u.
 sws_center = (3.0 * a_bohr**3 / 2.0 / (4.0 * np.pi * 4))**(1.0/3.0)
 print(f"Estimated SWS (NQ=4): {sws_center:.4f} a.u.")
 
-# S(ws) ratio: interstitial / metal
-# alpha = 0.70 (conservative for BCC, see guide Sec 5.3)
-alpha = 0.70
-s_ws_metal = (4.0 / (1.0 + 3.0 * alpha**3))**(1.0/3.0)
-s_ws_int = alpha * s_ws_metal
-print(f"S(ws)_metal = {s_ws_metal:.4f}, S(ws)_int = {s_ws_int:.4f}")
-print(f"R_metal = {sws_center * s_ws_metal:.4f} a.u., R_int = {sws_center * s_ws_int:.4f} a.u.")
-
-# Check overlap
-d_min = a_bohr / 2.0
-overlap = (sws_center * (s_ws_metal + s_ws_int) - d_min) / d_min * 100
-print(f"Overlap: {overlap:.1f}%")
+# S(ws) and WS(wst) = 1.0 for all sites (EMTO standard).
+# Volume partitioning is handled by SHAPE (Voronoi tessellation).
 
 # === Carbon concentration ===
 # 2 at% C on each octahedral sublattice
@@ -51,8 +41,6 @@ its   = np.array([1,      2,    2,    2,    2,    2,    2], dtype='int32')
 itas  = np.array([1,      1,    2,    1,    2,    1,    2], dtype='int32')
 concs = np.array([100.0,  conc_Va, conc_C, conc_Va, conc_C, conc_Va, conc_C])
 splts = np.array([2.0,    0.0,  0.0,  0.0,  0.0,  0.0,  0.0])
-s_wss    = np.array([s_ws_metal, s_ws_int, s_ws_int, s_ws_int, s_ws_int, s_ws_int, s_ws_int])
-ws_wsts  = np.array([s_ws_metal, s_ws_int, s_ws_int, s_ws_int, s_ws_int, s_ws_int, s_ws_int])
 
 # === BCC primitive cell basis (fractional coordinates) ===
 # Metal:         (0, 0, 0)
@@ -97,8 +85,6 @@ for i, sws_val in enumerate(sws_range):
         itas=itas,
         concs=concs,
         splts=splts,
-        s_wss=s_wss,
-        ws_wsts=ws_wsts,
         sws=sws_val,
         afm='F',           # Ferromagnetic
         xc='PBE',
