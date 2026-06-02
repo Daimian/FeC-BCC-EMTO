@@ -75,13 +75,11 @@ print(f"SWS scan: {sws_range}")
 fec = pyemto.System(folder=folder)
 
 # Set lattice structure (BMDL/KSTR/SHAPE)
-# EXPAN='M' requires two slope matrices: kappaw=[0.0, -20.0]
 fec.lattice.set_values(
     jobname_lat='fec_bcc',
     latpath=latpath,
     lat='bcc',
     basis=basis,
-    kappaw=[0.0, -20.0],
 )
 fec.lattice.write_structure_input_files(folder=folder, jobname_lat='fec_bcc')
 
@@ -104,7 +102,7 @@ for i, sws_val in enumerate(sws_range):
         sws=sws_val,
         afm='F',           # Ferromagnetic
         xc='PBE',
-        expan='M',         # Double-Taylor expansion
+        expan='S',         # Single-Taylor expansion
         sofc='Y',          # Soft-core
         niter=100,
         ncpa=30,           # More CPA iterations for empty spheres

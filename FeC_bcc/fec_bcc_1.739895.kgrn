@@ -1,6 +1,6 @@
 KGRN                                              2.6.2026
 JOBNAM=fec_bcc_1.739895
-STRT..=  A MSGL.=  1 EXPAN.= M FCD..=  Y FUNC..= SCA CQNA=N
+STRT..=  A MSGL.=  1 EXPAN.= S FCD..=  Y FUNC..= SCA CQNA=N
 FOR001=/home/dm/workplace/FeC-BCC-EMTO/FeC_bcc/kstr/fec_bcc.tfh
 FOR001=/home/dm/workplace/FeC-BCC-EMTO/FeC_bcc/kstr/fec_bccM.tfh
 DIR002=kgrn/
