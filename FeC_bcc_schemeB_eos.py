@@ -154,7 +154,9 @@ for i, sws_val in enumerate(sws_range):
         depth=1.0,
         imagz=0.02,
         efgs=0.2,
-        nx=9,
+        hx=0.2,
+        nx=11,
+        nz0=9,
         ncpu=8,
     )
 

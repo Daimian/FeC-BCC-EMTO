@@ -23,7 +23,7 @@ AMIX...=  0.050 EFMIX.=  1.000 VMTZ..=  0.000 MMOM..=  2.200
 TOLE...=1.0e-07 TOLEF.=1.0e-07 TOLCPA=1.0e-06 TFERMI=  500.0
 SWS......= 1.7398951 NSWS.=  1 DSWS..=   0.05 ALPCPA= 0.6020
 Setup: 2 + NQ*NS lines
-EFGS...=  0.200 HX....=  0.100 NX...=  9 NZ0..=  6 STMP..= N
+EFGS...=  0.200 HX....=  0.200 NX...= 11 NZ0..=  9 STMP..= N
 Symb   IQ IT ITA NZ  CONC   Sm(s)  S(ws) WS(wst) QTR SPLT Fix
 Fe      1  1  1  26  100.00  1.000  1.000  1.000  0.0 2.00  N
 Fe      2  1  1  26  100.00  1.000  1.000  1.000  0.0 2.00  N
