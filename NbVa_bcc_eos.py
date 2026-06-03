@@ -40,7 +40,7 @@ ws_wsts = np.array([s_ws_Nb, s_ws_Nb, s_ws_Va, s_ws_Va, s_ws_Va, s_ws_Va, s_ws_V
 
 # === SWS scan range ===
 n_sws = 7
-sws_range = np.linspace(sws_center - 0.06, sws_center + 0.06, n_sws)
+sws_range = np.linspace(1.70, 1.85, n_sws)
 print(f"SWS scan: {sws_range}")
 
 # === Create symlinks to shared lattice output ===
