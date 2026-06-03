@@ -30,10 +30,8 @@ concs = np.array([100.0])
 splts = np.array([2.0])
 
 # === SWS scan range ===
-# Centered on SWS=2.687 (energy minimum from first round)
-sws_min = 2.687
 n_sws = 7
-sws_range = np.linspace(sws_min - 0.03, sws_min + 0.03, n_sws)
+sws_range = np.linspace(2.56, 2.66, n_sws)
 print(f"SWS scan: {sws_range}")
 
 # === Create System ===

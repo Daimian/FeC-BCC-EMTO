@@ -1,5 +1,5 @@
 KGRN                                              3.6.2026
-JOBNAM=fe_bcc_2.667000
+JOBNAM=fe_bcc_2.560000
 STRT..=  A MSGL.=  1 EXPAN.= S FCD..=  Y FUNC..= SCA CQNA=N
 FOR001=./kstr/fe_bcc.tfh
 FOR001=./kstr/fe_bccM.tfh
@@ -10,7 +10,7 @@ DIR006=kgrn/
 DIR009=kgrn/
 DIR010=kgrn/
 DIR011=kgrn/tmp/
-Self-consistent KKR Calc for fe_bcc_2.667000.
+Self-consistent KKR Calc for fe_bcc_2.560000.
 Band: 10 lines
 NITER.=500 NLIN.= 31 NPRN.=  0 NCPA.=  7 NT...=  1 MNTA.=  1
 MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  F CRT..=  M
@@ -21,7 +21,7 @@ ZMSH...= C NZ1..= 16 NZ2..=  8 NZ3..=  8 NRES.=  4 NZD.=1500
 DEPTH..=  1.000 IMAGZ.=  0.020 EPS...=  0.200 ELIM..= -1.000
 AMIX...=  0.020 EFMIX.=  1.000 VMTZ..=  0.000 MMOM..=  2.200
 TOLE...=1.0e-07 TOLEF.=1.0e-07 TOLCPA=1.0e-06 TFERMI=  500.0
-SWS......= 2.6670000 NSWS.=  1 DSWS..=   0.05 ALPCPA= 0.6020
+SWS......= 2.5600000 NSWS.=  1 DSWS..=   0.05 ALPCPA= 0.6020
 Setup: 2 + NQ*NS lines
 EFGS...=  0.200 HX....=  0.200 NX...= 11 NZ0..=  9 STMP..= N
 Symb   IQ IT ITA NZ  CONC   Sm(s)  S(ws) WS(wst) QTR SPLT Fix
