@@ -1,11 +1,11 @@
-KGRN                                              2.6.2026
+KGRN                                              3.6.2026
 JOBNAM=fec_bcc_B_1.679895
-STRT..=  B MSGL.=  1 EXPAN.= S FCD..=  Y FUNC..= SCA CQNA=N
-FOR001=./kstr/fec_bcc_B.tfh
-FOR001=./kstr/fec_bcc_BM.tfh
+STRT..=  A MSGL.=  1 EXPAN.= S FCD..=  Y FUNC..= SCA CQNA=N
+FOR001=../lattice/bcc_oct/kstr/bcc_oct.tfh
+FOR001=../lattice/bcc_oct/kstr/bcc_octM.tfh
 DIR002=kgrn/
 DIR003=kgrn/
-FOR004=./bmdl/fec_bcc_B.mdl
+FOR004=../lattice/bcc_oct/bmdl/bcc_oct.mdl
 DIR006=kgrn/
 DIR009=kgrn/
 DIR010=kgrn/

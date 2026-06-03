@@ -12,7 +12,7 @@ import pyemto
 
 # === Paths ===
 folder = os.path.abspath("./FeC_bcc_B")
-latpath = "."
+latpath = "../lattice/bcc_oct"
 
 # === Physical parameters ===
 # alpha-Fe: a = 2.866 Å = 5.416 a.u.
@@ -103,24 +103,26 @@ n_sws = 7
 sws_range = np.linspace(sws_center - 0.06, sws_center + 0.06, n_sws)
 print(f"SWS scan: {sws_range}")
 
-# === Create System ===
+# === Create symlinks to shared lattice output ===
+os.makedirs(folder, exist_ok=True)
+for d in ['bmdl', 'kstr', 'shape']:
+    link = os.path.join(folder, d)
+    target = os.path.join('..', 'lattice', 'bcc_oct', d)
+    if os.path.islink(link):
+        os.unlink(link)
+    elif os.path.isdir(link):
+        import shutil
+        shutil.rmtree(link)
+    os.symlink(target, link)
+
+# === Create System and generate KGRN/KFCD ===
 fec = pyemto.System(folder=folder)
 
-# Set lattice structure (BMDL/KSTR/SHAPE)
-fec.lattice.set_values(
-    jobname_lat='fec_bcc_B',
-    latpath=latpath,
-    lat='sc',
-    basis=basis,
-)
-fec.lattice.write_structure_input_files(folder=folder, jobname_lat='fec_bcc_B')
-
-# Set KGRN/KFCD parameters and generate SWS scan
 for i, sws_val in enumerate(sws_range):
     fec.bulk_new(
         lat='sc',
         jobname='fec_bcc_B',
-        latname='fec_bcc_B',
+        latname='bcc_oct',
         latpath=latpath,
         ibz=1,             # IBZ=1 for SC
         atoms=atoms,
