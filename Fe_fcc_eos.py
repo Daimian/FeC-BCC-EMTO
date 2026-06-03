@@ -28,6 +28,7 @@ its   = np.array([1, 1], dtype='int32')
 itas  = np.array([1, 2], dtype='int32')
 concs = np.array([50.0, 50.0])
 splts = np.array([2.0, -2.0])
+fixs  = np.array(['Y', 'Y'])
 
 # === SWS scan range ===
 n_sws = 7
@@ -59,8 +60,9 @@ for i, sws_val in enumerate(sws_range):
         itas=itas,
         concs=concs,
         splts=splts,
+        fixs=fixs,
         sws=sws_val,
-        afm='F',
+        afm='m',
         xc='PBE',
         expan='S',
         sofc='Y',

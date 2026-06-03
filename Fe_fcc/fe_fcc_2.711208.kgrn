@@ -13,7 +13,7 @@ DIR011=kgrn/tmp/
 Self-consistent KKR Calc for fe_fcc_2.711208.
 Band: 10 lines
 NITER.=500 NLIN.= 31 NPRN.=  0 NCPA.= 30 NT...=  1 MNTA.=  2
-MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  F CRT..=  M
+MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  m CRT..=  M
 Lmaxh.=  8 Lmaxt=  4 NFI..= 31 FIXG.=  2 SHF..=  0 SOFC.=  Y
 KMSH...= G IBZ..=  2 NKX..= 21 NKY..= 21 NKZ..= 21 FBZ..=  N
 KMSH2..= G IBZ2.=  1 NKX2.=  4 NKY2.=  0 NKZ2.= 51 NCPU.=001
@@ -25,8 +25,8 @@ SWS......= 2.7112077 NSWS.=  1 DSWS..=   0.05 ALPCPA= 0.6020
 Setup: 2 + NQ*NS lines
 EFGS...=  0.200 HX....=  0.200 NX...= 11 NZ0..=  9 STMP..= N
 Symb   IQ IT ITA NZ  CONC   Sm(s)  S(ws) WS(wst) QTR SPLT Fix
-Fe      1  1  1  26  50.00  1.000  1.000  1.000  0.0 2.00  N
-Fe      1  1  2  26  50.00  1.000  1.000  1.000  0.0-2.00  N
+Fe      1  1  1  26  50.00  1.000  1.000  1.000  0.0 2.00  Y
+Fe      1  1  2  26  50.00  1.000  1.000  1.000  0.0-2.00  Y
 Atom:  4 lines + NT*6 lines
 IEX...=  4 NP..= 251 NES..= 15 NITER=100 IWAT.=  0 NPRNA=  0
 VMIX.....=  0.300000 RWAT....=  3.500000 RMAX....= 20.000000
