@@ -37,16 +37,16 @@ print(f"C conc on oct site: {conc_C:.4f}%, Va: {conc_Va:.4f}%")
 print(f"Overall: {conc_C/(100+conc_C)*100:.2f} at.% C (Fe24C1 equivalent)")
 
 # === KGRN atom block ===
-# DLM: Fe_up 50% + Fe_dn 50% on metal site
+# NM: single Fe component, no spin splitting
 # Oct: Va + C with CPA
-atoms = np.array(['Fe', 'Fe', 'Va', 'C'])
-iqs   = np.array([1, 1, 2, 2], dtype='int32')
-its   = np.array([1, 1, 2, 2], dtype='int32')
-itas  = np.array([1, 2, 1, 2], dtype='int32')
-concs = np.array([50.0, 50.0, conc_Va, conc_C])
-splts = np.array([2.0, -2.0, 0.0, 0.0])
-s_wss   = np.array([s_ws_Fe, s_ws_Fe, s_ws_C, s_ws_C])
-ws_wsts = np.array([s_ws_Fe, s_ws_Fe, s_ws_C, s_ws_C])
+atoms = np.array(['Fe', 'Va', 'C'])
+iqs   = np.array([1, 2, 2], dtype='int32')
+its   = np.array([1, 2, 2], dtype='int32')
+itas  = np.array([1, 1, 2], dtype='int32')
+concs = np.array([100.0, conc_Va, conc_C])
+splts = np.array([0.0, 0.0, 0.0])
+s_wss   = np.array([s_ws_Fe, s_ws_C, s_ws_C])
+ws_wsts = np.array([s_ws_Fe, s_ws_C, s_ws_C])
 
 # === SWS scan range ===
 n_sws = 7
@@ -84,7 +84,7 @@ for i, sws_val in enumerate(sws_range):
         sws=sws_val,
         s_wss=s_wss,
         ws_wsts=ws_wsts,
-        afm='m',
+        afm='P',
         xc='PBE',
         expan='S',
         sofc='Y',
@@ -96,7 +96,7 @@ for i, sws_val in enumerate(sws_range):
         efmix=1.0,
         tole=1.0e-7,
         tolef=1.0e-7,
-        mmom=2.0,
+        mmom=0.0,
         nky=21,
         nkx=21,
         nkz=21,
