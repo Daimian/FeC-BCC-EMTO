@@ -46,3 +46,23 @@ sys.lattice.set_values(
 )
 sys.lattice.write_structure_input_files(folder=folder, jobname_lat='bcc_oct')
 print(f"Generated bcc_oct structure files in: {folder}")
+
+# === FCC + octahedral interstitial (FCC primitive cell, NQ=2) ===
+folder = os.path.abspath("./fcc_oct")
+os.makedirs(folder, exist_ok=True)
+
+basis_fcc_oct = np.array([
+    [0.0, 0.0, 0.0],       # Metal
+    [0.5, 0.5, 0.5],       # Octahedral interstitial
+])
+
+sys = pyemto.System(folder=folder)
+sys.lattice.set_values(
+    jobname_lat='fcc_oct',
+    latpath='.',
+    lat='fcc',
+    basis=basis_fcc_oct,
+    kappaw=[0.0, -0.2],
+)
+sys.lattice.write_structure_input_files(folder=folder, jobname_lat='fcc_oct')
+print(f"Generated fcc_oct structure files in: {folder}")
