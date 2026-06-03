@@ -1,0 +1,10 @@
+KFCD      MSGL..=  0 CQNA=  N      3.6.2026
+JOBNAM...=nbva_bcc_1.934751
+STRNAM...=bcc_oct
+DIR001=../lattice/bcc_oct/kstr/
+DIR002=kgrn/
+DIR003=../lattice/bcc_oct/shape/
+DIR004=../lattice/bcc_oct/bmdl/
+DIR006=kfcd/
+Lmaxs.= 30 NTH..= 41 NFI..= 81 FPOT..= N
+OVCOR.=  Y UBG..=  N NPRN.=  0
