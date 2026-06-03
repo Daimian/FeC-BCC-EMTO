@@ -64,7 +64,7 @@ for i, sws_val in enumerate(sws_range):
         xc='PBE',
         expan='S',
         sofc='Y',
-        amix=0.05,
+        amix=0.02,
         efmix=1.0,
         niter=500,
         tole=1.0e-7,
