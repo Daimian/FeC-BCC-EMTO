@@ -2,6 +2,7 @@
 """
 Generate EMTO input files for pure BCC Nb (NQ=1).
 Non-magnetic, PBE, SWS scan for EOS fitting.
+Uses shared lattice files from lattice/bcc/.
 """
 
 import os
@@ -10,11 +11,10 @@ import pyemto
 
 # === Paths ===
 folder = os.path.abspath("./Nb_bcc")
-latpath = "."
+latpath = "../lattice/bcc"
 
 # === Physical parameters ===
 # Nb BCC: a = 3.3008 Å
-# NQ=1, BCC primitive cell volume = a^3/2
 a_bohr = 3.3008 * 1.8897259886
 sws_center = (3.0 * a_bohr**3 / 2.0 / (4.0 * np.pi))**(1.0/3.0)
 print(f"Estimated SWS (NQ=1): {sws_center:.4f} a.u.")
@@ -32,23 +32,26 @@ n_sws = 7
 sws_range = np.linspace(sws_center - 0.06, sws_center + 0.06, n_sws)
 print(f"SWS scan: {sws_range}")
 
-# === Create System ===
+# === Create symlinks to shared lattice output ===
+os.makedirs(folder, exist_ok=True)
+for d in ['bmdl', 'kstr', 'shape']:
+    link = os.path.join(folder, d)
+    target = os.path.join('..', 'lattice', 'bcc', d)
+    if os.path.islink(link):
+        os.unlink(link)
+    elif os.path.isdir(link):
+        import shutil
+        shutil.rmtree(link)
+    os.symlink(target, link)
+
+# === Create System and generate KGRN/KFCD ===
 nb = pyemto.System(folder=folder)
 
-# Set lattice structure (BMDL/KSTR/SHAPE)
-nb.lattice.set_values(
-    jobname_lat='nb_bcc',
-    latpath=latpath,
-    lat='bcc',
-)
-nb.lattice.write_structure_input_files(folder=folder, jobname_lat='nb_bcc')
-
-# Set KGRN/KFCD parameters and generate SWS scan
 for i, sws_val in enumerate(sws_range):
     nb.bulk_new(
         lat='bcc',
         jobname='nb_bcc',
-        latname='nb_bcc',
+        latname='bcc',
         latpath=latpath,
         ibz=3,
         atoms=atoms,

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name=Fe_EOS
+#SBATCH --job-name=EOS
 #SBATCH -N 1
 #SBATCH -n 7
 #SBATCH -c 1

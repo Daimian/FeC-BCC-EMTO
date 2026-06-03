@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
 Generate EMTO input files for pure FCC Fe (NQ=1).
-Non-magnetic, PBE, SWS scan for EOS fitting.
+DLM paramagnetic, PBE, SWS scan for EOS fitting.
+Uses shared lattice files from lattice/fcc/.
 """
 
 import os
@@ -10,12 +11,10 @@ import pyemto
 
 # === Paths ===
 folder = os.path.abspath("./Fe_fcc")
-latpath = "."
+latpath = "../lattice/fcc"
 
 # === Physical parameters ===
 # gamma-Fe: a ~ 3.59 Å (experimental high-T)
-# NQ=1, FCC primitive cell volume = a^3/4
-# SWS = [3 * a^3/4 / (4*pi)]^(1/3)
 a_bohr = 3.59 * 1.8897259886
 sws_center = (3.0 * a_bohr**3 / 4.0 / (4.0 * np.pi))**(1.0/3.0)
 print(f"Estimated SWS (NQ=1, FCC): {sws_center:.4f} a.u.")
@@ -34,23 +33,26 @@ n_sws = 7
 sws_range = np.linspace(sws_center - 0.06, sws_center + 0.06, n_sws)
 print(f"SWS scan: {sws_range}")
 
-# === Create System ===
+# === Create symlinks to shared lattice output ===
+os.makedirs(folder, exist_ok=True)
+for d in ['bmdl', 'kstr', 'shape']:
+    link = os.path.join(folder, d)
+    target = os.path.join('..', 'lattice', 'fcc', d)
+    if os.path.islink(link):
+        os.unlink(link)
+    elif os.path.isdir(link):
+        import shutil
+        shutil.rmtree(link)
+    os.symlink(target, link)
+
+# === Create System and generate KGRN/KFCD ===
 fe = pyemto.System(folder=folder)
 
-# Set lattice structure (BMDL/KSTR/SHAPE)
-fe.lattice.set_values(
-    jobname_lat='fe_fcc',
-    latpath=latpath,
-    lat='fcc',
-)
-fe.lattice.write_structure_input_files(folder=folder, jobname_lat='fe_fcc')
-
-# Set KGRN/KFCD parameters and generate SWS scan
 for i, sws_val in enumerate(sws_range):
     fe.bulk_new(
         lat='fcc',
         jobname='fe_fcc',
-        latname='fe_fcc',
+        latname='fcc',
         latpath=latpath,
         ibz=2,
         atoms=atoms,

@@ -1,10 +1,10 @@
 KFCD      MSGL..=  0 CQNA=  N      3.6.2026
 JOBNAM...=fe_fcc_2.671208
-STRNAM...=fe_fcc
-DIR001=./kstr/
+STRNAM...=fcc
+DIR001=../lattice/fcc/kstr/
 DIR002=kgrn/
-DIR003=./shape/
-DIR004=./bmdl/
+DIR003=../lattice/fcc/shape/
+DIR004=../lattice/fcc/bmdl/
 DIR006=kfcd/
 Lmaxs.= 30 NTH..= 41 NFI..= 81 FPOT..= N
 OVCOR.=  Y UBG..=  N NPRN.=  0

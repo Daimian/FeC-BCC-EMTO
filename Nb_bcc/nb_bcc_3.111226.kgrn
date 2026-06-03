@@ -1,11 +1,11 @@
 KGRN                                              3.6.2026
 JOBNAM=nb_bcc_3.111226
 STRT..=  A MSGL.=  1 EXPAN.= S FCD..=  Y FUNC..= SCA CQNA=N
-FOR001=./kstr/nb_bcc.tfh
-FOR001=./kstr/nb_bccM.tfh
+FOR001=../lattice/bcc/kstr/bcc.tfh
+FOR001=../lattice/bcc/kstr/bccM.tfh
 DIR002=kgrn/
 DIR003=kgrn/
-FOR004=./bmdl/nb_bcc.mdl
+FOR004=../lattice/bcc/bmdl/bcc.mdl
 DIR006=kgrn/
 DIR009=kgrn/
 DIR010=kgrn/

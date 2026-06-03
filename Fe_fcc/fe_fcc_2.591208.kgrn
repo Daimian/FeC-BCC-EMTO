@@ -1,11 +1,11 @@
 KGRN                                              3.6.2026
 JOBNAM=fe_fcc_2.591208
 STRT..=  A MSGL.=  1 EXPAN.= S FCD..=  Y FUNC..= SCA CQNA=N
-FOR001=./kstr/fe_fcc.tfh
-FOR001=./kstr/fe_fccM.tfh
+FOR001=../lattice/fcc/kstr/fcc.tfh
+FOR001=../lattice/fcc/kstr/fccM.tfh
 DIR002=kgrn/
 DIR003=kgrn/
-FOR004=./bmdl/fe_fcc.mdl
+FOR004=../lattice/fcc/bmdl/fcc.mdl
 DIR006=kgrn/
 DIR009=kgrn/
 DIR010=kgrn/

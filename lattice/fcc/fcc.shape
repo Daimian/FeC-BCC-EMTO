@@ -1,6 +1,6 @@
 SHAPE     HP......=N                            3.6.2026
-JOBNAM...=fe_fcc     MSGL.=  1
-FOR001=kstr/fe_fcc.tfh
+JOBNAM...=fcc        MSGL.=  1
+FOR001=kstr/fcc.tfh
 DIR002=shape/
 DIR006=shape/
 Lmax..= 30 NSR..=129 NFI..= 11

@@ -2,7 +2,7 @@
 """
 Generate EMTO input files for pure BCC Fe (NQ=1).
 FM (ferromagnetic), PBE, SWS scan for EOS fitting.
-Reference calculation for validating interstitial models.
+Uses shared lattice files from lattice/bcc/.
 """
 
 import os
@@ -11,12 +11,10 @@ import pyemto
 
 # === Paths ===
 folder = os.path.abspath("./Fe_bcc")
-latpath = "."
+latpath = "../lattice/bcc"
 
 # === Physical parameters ===
 # alpha-Fe: a = 2.866 Å = 5.416 a.u.
-# NQ=1, BCC primitive cell volume = a^3/2
-# SWS = [3 * a^3/2 / (4*pi)]^(1/3)
 a_bohr = 2.866 * 1.8897259886
 sws_center = (3.0 * a_bohr**3 / 2.0 / (4.0 * np.pi))**(1.0/3.0)
 print(f"Estimated SWS (NQ=1): {sws_center:.4f} a.u.")
@@ -34,23 +32,26 @@ n_sws = 7
 sws_range = np.linspace(2.65, 2.70, n_sws)
 print(f"SWS scan: {sws_range}")
 
-# === Create System ===
+# === Create symlinks to shared lattice output ===
+os.makedirs(folder, exist_ok=True)
+for d in ['bmdl', 'kstr', 'shape']:
+    link = os.path.join(folder, d)
+    target = os.path.join('..', 'lattice', 'bcc', d)
+    if os.path.islink(link):
+        os.unlink(link)
+    elif os.path.isdir(link):
+        import shutil
+        shutil.rmtree(link)
+    os.symlink(target, link)
+
+# === Create System and generate KGRN/KFCD ===
 fe = pyemto.System(folder=folder)
 
-# Set lattice structure (BMDL/KSTR/SHAPE)
-fe.lattice.set_values(
-    jobname_lat='fe_bcc',
-    latpath=latpath,
-    lat='bcc',
-)
-fe.lattice.write_structure_input_files(folder=folder, jobname_lat='fe_bcc')
-
-# Set KGRN/KFCD parameters and generate SWS scan
 for i, sws_val in enumerate(sws_range):
     fe.bulk_new(
         lat='bcc',
         jobname='fe_bcc',
-        latname='fe_bcc',
+        latname='bcc',
         latpath=latpath,
         ibz=3,
         atoms=atoms,
