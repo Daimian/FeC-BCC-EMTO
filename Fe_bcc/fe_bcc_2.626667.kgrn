@@ -1,6 +1,6 @@
 KGRN                                              3.6.2026
 JOBNAM=fe_bcc_2.626667
-STRT..=  A MSGL.=  1 EXPAN.= S FCD..=  Y FUNC..= SCA CQNA=N
+STRT..=  B MSGL.=  1 EXPAN.= S FCD..=  Y FUNC..= SCA CQNA=N
 FOR001=./kstr/fe_bcc.tfh
 FOR001=./kstr/fe_bccM.tfh
 DIR002=kgrn/
@@ -12,7 +12,7 @@ DIR010=kgrn/
 DIR011=kgrn/tmp/
 Self-consistent KKR Calc for fe_bcc_2.626667.
 Band: 10 lines
-NITER.=100 NLIN.= 31 NPRN.=  0 NCPA.=  7 NT...=  1 MNTA.=  1
+NITER.=500 NLIN.= 31 NPRN.=  0 NCPA.=  7 NT...=  1 MNTA.=  1
 MODE..= 3D FRC..=  N DOS..=  N OPS..=  N AFM..=  F CRT..=  M
 Lmaxh.=  8 Lmaxt=  4 NFI..= 31 FIXG.=  2 SHF..=  0 SOFC.=  Y
 KMSH...= G IBZ..=  3 NKX..= 21 NKY..= 21 NKZ..= 21 FBZ..=  N
