@@ -131,7 +131,7 @@ for i, sws_val in enumerate(sws_range):
         nky=21,
         nkx=21,
         nkz=21,
-        ncpu=1,
+        ncpu=8,
         lmaxh=8,
         lmaxt=4,
         tfermi=500.0,
