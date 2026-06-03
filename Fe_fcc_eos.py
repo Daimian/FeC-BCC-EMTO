@@ -21,12 +21,13 @@ sws_center = (3.0 * a_bohr**3 / 4.0 / (4.0 * np.pi))**(1.0/3.0)
 print(f"Estimated SWS (NQ=1, FCC): {sws_center:.4f} a.u.")
 
 # === KGRN atom block ===
-atoms = np.array(['Fe'])
-iqs   = np.array([1], dtype='int32')
-its   = np.array([1], dtype='int32')
-itas  = np.array([1], dtype='int32')
-concs = np.array([100.0])
-splts = np.array([0.0])
+# DLM: Fe_up 50% + Fe_dn 50% on the same site
+atoms = np.array(['Fe', 'Fe'])
+iqs   = np.array([1, 1], dtype='int32')
+its   = np.array([1, 1], dtype='int32')
+itas  = np.array([1, 2], dtype='int32')
+concs = np.array([50.0, 50.0])
+splts = np.array([2.0, -2.0])
 
 # === SWS scan range ===
 n_sws = 7
@@ -59,7 +60,7 @@ for i, sws_val in enumerate(sws_range):
         concs=concs,
         splts=splts,
         sws=sws_val,
-        afm='P',
+        afm='F',
         xc='PBE',
         expan='S',
         sofc='Y',
@@ -68,7 +69,10 @@ for i, sws_val in enumerate(sws_range):
         efmix=1.0,
         tole=1.0e-7,
         tolef=1.0e-7,
-        mmom=0.0,
+        mmom=2.0,
+        ncpa=30,
+        tolcpa=1.0e-6,
+        alpcpa=0.602,
         nky=21,
         nkx=21,
         nkz=21,
