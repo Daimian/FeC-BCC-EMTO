@@ -31,7 +31,7 @@ splts = np.array([2.0])
 
 # === SWS scan range ===
 n_sws = 7
-sws_range = np.linspace(2.55, 2.67, n_sws)
+sws_range = np.linspace(2.65, 2.77, n_sws)
 print(f"SWS scan: {sws_range}")
 
 # === Create System ===
