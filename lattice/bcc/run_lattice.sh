@@ -12,6 +12,7 @@ ml openmpi/4.1.8-6xzv intel-oneapi-compilers/2025.3.1-pbro intel-oneapi-mkl/2025
 
 bmdl < bcc.bmdl > bmdl_bcc.output 2>&1
 kstr < bcc.kstr > kstr_bcc.output 2>&1
+kstr < bccM.kstr > kstr_bccM.output 2>&1
 shape < bcc.shape > shape_bcc.output 2>&1
 
 echo "BCC lattice files done."

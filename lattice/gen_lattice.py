@@ -6,6 +6,7 @@ import numpy as np
 import pyemto
 
 # === Simple lattices (NQ=1) ===
+# kappaw=[0.0, -0.2] generates both bcc.tfh and bccM.tfh (needed for FCD)
 for lat in ['bcc', 'fcc']:
     folder = os.path.abspath(f"./{lat}")
     os.makedirs(folder, exist_ok=True)
@@ -15,6 +16,7 @@ for lat in ['bcc', 'fcc']:
         jobname_lat=lat,
         latpath='.',
         lat=lat,
+        kappaw=[0.0, -0.2],
     )
     sys.lattice.write_structure_input_files(folder=folder, jobname_lat=lat)
     print(f"Generated {lat} structure files in: {folder}")
@@ -40,6 +42,7 @@ sys.lattice.set_values(
     latpath='.',
     lat='sc',
     basis=basis,
+    kappaw=[0.0, -0.2],
 )
 sys.lattice.write_structure_input_files(folder=folder, jobname_lat='bcc_oct')
 print(f"Generated bcc_oct structure files in: {folder}")

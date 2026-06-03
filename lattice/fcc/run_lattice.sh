@@ -12,6 +12,7 @@ ml openmpi/4.1.8-6xzv intel-oneapi-compilers/2025.3.1-pbro intel-oneapi-mkl/2025
 
 bmdl < fcc.bmdl > bmdl_fcc.output 2>&1
 kstr < fcc.kstr > kstr_fcc.output 2>&1
+kstr < fccM.kstr > kstr_fccM.output 2>&1
 shape < fcc.shape > shape_fcc.output 2>&1
 
 echo "FCC lattice files done."

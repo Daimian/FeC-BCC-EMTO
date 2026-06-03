@@ -7,4 +7,5 @@
 
 $HOME/EMTO5.8/bmdl/bmdl < /home/dm/workplace/FeC-BCC-EMTO/lattice/fcc/fcc.bmdl > /home/dm/workplace/FeC-BCC-EMTO/lattice/fcc/fcc_bmdl.output
 $HOME/EMTO5.8/kstr/kstr < /home/dm/workplace/FeC-BCC-EMTO/lattice/fcc/fcc.kstr > /home/dm/workplace/FeC-BCC-EMTO/lattice/fcc/fcc_kstr.output
+$HOME/EMTO5.8/kstr/kstr < /home/dm/workplace/FeC-BCC-EMTO/lattice/fcc/fccM.kstr > /home/dm/workplace/FeC-BCC-EMTO/lattice/fcc/fccM_kstr.output
 $HOME/EMTO5.8/shape/shape < /home/dm/workplace/FeC-BCC-EMTO/lattice/fcc/fcc.shape > /home/dm/workplace/FeC-BCC-EMTO/lattice/fcc/fcc_shape.output
