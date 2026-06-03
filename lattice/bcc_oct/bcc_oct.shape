@@ -1,5 +1,5 @@
-SHAPE     HP......=N                            2.6.2026
-JOBNAM...=bcc_oct  MSGL.=  1
+SHAPE     HP......=N                            3.6.2026
+JOBNAM...=bcc_oct    MSGL.=  1
 FOR001=kstr/bcc_oct.tfh
 DIR002=shape/
 DIR006=shape/

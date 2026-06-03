@@ -1,8 +1,8 @@
-KSTR      HP......=N                              2.6.2026
-JOBNAM...=bcc_oct  MSGL.=  1 MODE...=B STORE..=Y HIGH...=Y
+KSTR      HP......=N                              3.6.2026
+JOBNAM...=bcc_oct    MSGL.=  1 MODE...=B STORE..=Y HIGH...=Y
 DIR001=kstr/
 DIR006=kstr/
-Slope matrices, bcc_oct , (kappa*w)^2=   0.0
+Slope matrices, bcc_oct   , (kappa*w)^2=   0.0
 NL.....= 4 NLH...=11 NLW...= 9 NDER..= 6 ITRANS= 3 NPRN..= 0
 (K*W)^2..=  0.000000 DMAX....=    1.4375 RWATS...=      0.10
 NQ3...=  8 LAT...= 1 IPRIM.= 0 NGHBP.=13 NQR2..= 0
