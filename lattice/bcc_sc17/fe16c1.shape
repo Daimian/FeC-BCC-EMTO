@@ -1,0 +1,7 @@
+SHAPE     HP......=N                            8.7.2026
+JOBNAM...=fe16c1     MSGL.=  1
+FOR001=kstr/fe16c1.tfh
+DIR002=shape/
+DIR006=shape/
+Lmax..= 30 NSR..=129 NFI..= 11
+NPRN..=  0 IVEF.=  3
