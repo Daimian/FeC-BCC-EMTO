@@ -67,7 +67,10 @@ sys.lattice.set_values(
 sys.lattice.write_structure_input_files(folder=folder, jobname_lat='fcc_oct')
 print(f"Generated fcc_oct structure files in: {folder}")
 
-# === BCC 2x2x2 supercell: Fe16C1 (SC conventional cell, NQ=17) ===
+# === BCC 2x2x2 supercell: Fe16C1 (triclinic, NQ=17) ===
+# Using LAT=14 (stric) for full flexibility over c/a ratio.
+# c/a=1.0 → BCC; c/a≠1 → BCT (martensite).
+ca = 1.0
 folder = os.path.abspath("./bcc_sc17")
 os.makedirs(folder, exist_ok=True)
 
@@ -86,13 +89,22 @@ basis_sc17 = np.array([
     [0.00, 0.00, 0.25],
 ])
 
+# Site-specific a/w: 0.70 for Fe (IQ 1-16), 0.50 for C interstitial (IQ 17)
+nq = 17
+nl = 4
+awIQ = np.ones((nq, nl)) * 0.70
+awIQ[16, :] = 0.50
+
 sys = pyemto.System(folder=folder)
 sys.lattice.set_values(
     jobname_lat='fe16c1',
     latpath='.',
-    lat='sc',
+    lat='stric',
+    latvectors=[[1.0, 0.0, 0.0], [0.0, 1.0, 0.0], [0.0, 0.0, ca]],
+    latparams=[1.0, 1.0, 1.0],
     basis=basis_sc17,
     kappaw=[0.0, -0.2],
+    awIQ=awIQ,
 )
 sys.lattice.write_structure_input_files(folder=folder, jobname_lat='fe16c1')
 print(f"Generated bcc_sc17 (Fe16C1) structure files in: {folder}")
