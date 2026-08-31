@@ -23,3 +23,6 @@
 # Python
 __pycache__/
 *.pyc
+
+# --- offboarding 2026-08-31 ---
+docs/refs/*.pdf
