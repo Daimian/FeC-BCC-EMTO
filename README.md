@@ -27,3 +27,7 @@ E(SWS) 曲线单调递减，缺少物理上应有的排斥-吸引平衡点。该
 无依赖声明。需要 Python + numpy/scipy，以及外部 EMTO 程序（kgrn/kfcd，不在本仓库）。
 
 > `docs/refs/*.pdf`（AL-ZOUBI 学位论文等）已在 .gitignore 中排除。
+
+## 许可证
+
+[CC BY 4.0](LICENSE)
